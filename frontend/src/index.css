@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-ink-950 text-surface-50 antialiased;
+
+  /* Clean, professional typography */
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-feature-settings:
+    "cv02" 1,
+    "cv03" 1,
+    "cv04" 1,
+    "cv11" 1;
+
+  background-image:
+    radial-gradient(
+      ellipse 900px 500px at 15% -10%,
+      rgba(110, 86, 207, 0.05),
+      transparent 60%
+    );
+
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #6E56CF;
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262A38;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #363B4C;
+}
+
+:focus-visible {
+  outline: 2px solid #8874D9;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-3.5 py-2 text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply btn bg-violet-500 text-white hover:bg-violet-600 active:bg-violet-700;
+  }
+
+  .btn-secondary {
+    @apply btn bg-ink-800 text-surface-50/90 hover:bg-ink-700 border border-ink-700;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-surface-50/70 hover:bg-ink-800 hover:text-surface-50;
+  }
+
+  .btn-danger {
+    @apply btn bg-transparent text-red-400 hover:bg-red-500/10 border border-red-500/25;
+  }
+
+  .input {
+    @apply w-full rounded-md bg-ink-900 border border-ink-700 px-3 py-2 text-sm text-surface-50 placeholder:text-surface-50/30 outline-none transition-colors focus:border-violet-400;
+  }
+
+  .card {
+    @apply rounded-xl bg-ink-900 border border-ink-700/70;
+  }
+
+  .label {
+    @apply block text-xs font-medium uppercase tracking-wide text-surface-50/45 mb-1.5;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded px-2 py-0.5 text-xs font-medium;
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeSlideIn 0.18s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
