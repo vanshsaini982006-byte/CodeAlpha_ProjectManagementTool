@@ -1,10 +1,10 @@
-# TaskFlow
+# Project Management Tool
 
 A full-stack, real-time project management tool — boards, tasks, comments, and notifications, built with the MERN stack and Socket.io.
 
 ## Overview
 
-TaskFlow lets a team create projects, invite members with roles (Owner / Admin / Member), organize work on a Trello-style Kanban board, assign and track tasks with priorities and due dates, discuss work inline through task comments, and stay in sync through live, real-time updates — no page refresh required.
+Project Management Tool lets a team create projects, invite members with roles (Owner / Admin / Member), organize work on a Trello-style Kanban board, assign and track tasks with priorities and due dates, discuss work inline through task comments, and stay in sync through live, real-time updates — no page refresh required.
 
 ## Features
 
@@ -28,7 +28,7 @@ TaskFlow lets a team create projects, invite members with roles (Owner / Admin /
 ## Folder Structure
 
 ```
-taskflow/
+Project Management Tool/
 ├── backend/
 │   ├── config/          # MongoDB connection
 │   ├── controllers/     # Route handler logic
@@ -64,8 +64,8 @@ taskflow/
 ### 1. Clone and install
 
 ```bash
-git clone <your-repo-url> taskflow
-cd taskflow
+git clone <your-repo-url> Project Management Tool
+cd Project Management Tool
 
 cd backend && npm install
 cd ../frontend && npm install
@@ -83,7 +83,7 @@ JWT_EXPIRES_IN=7d
 CLIENT_URL=http://localhost:5173
 ```
 
-- `MONGO_URI` — e.g. `mongodb://localhost:27017/taskflow` or your Atlas connection string
+- `MONGO_URI` — e.g. `mongodb://localhost:27017/Project Management Tool` or your Atlas connection string
 - `JWT_SECRET` — any long random string
 - `CLIENT_URL` — the frontend origin, used for CORS and Socket.io
 
@@ -98,7 +98,7 @@ VITE_SOCKET_URL=http://localhost:5000
 
 ### 3. MongoDB setup
 
-**Option A — Local MongoDB:** install MongoDB Community Server and run `mongod`. Use `MONGO_URI=mongodb://localhost:27017/taskflow`.
+**Option A — Local MongoDB:** install MongoDB Community Server and run `mongod`. Use `MONGO_URI=mongodb://localhost:27017/Project Management Tool`.
 
 **Option B — MongoDB Atlas (recommended):**
 1. Create a free cluster at [mongodb.com/cloud/atlas](https://www.mongodb.com/cloud/atlas)
